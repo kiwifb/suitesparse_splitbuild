@@ -1,6 +1,6 @@
 AC_INIT([colamd], [2.8.0], [davis@tamu.edu])
 
-AC_CONFIG_SRCDIR([Source/colamd_global.c])
+AC_CONFIG_SRCDIR([Source/colamd.c])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_AUX_DIR([config])
