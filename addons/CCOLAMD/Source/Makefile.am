@@ -8,7 +8,7 @@ libccolamdl_la_CPPFLAGS = $(AM_CPPFLAGS) -DDLONG
 
 libccolamdi_la_SOURCES = $(libccolamdl_la_SOURCES)
 
-libccolamd_la_SOURCES = ccolamd_global.c
+libccolamd_la_SOURCES =
 libccolamd_la_LIBADD = libccolamdi.la libccolamdl.la @SUITESPARSECONFIG_LIBS@
 
 MAINTAINERCLEANFILES = Makefile.in
