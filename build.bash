@@ -18,7 +18,7 @@ build_suitesparse_pkg() {
 	rm -rf SuiteSparse
     fi
     rm -rf ${lib}_build
-    tar xf SuiteSparse.tar.gz
+    tar xf SuiteSparse-5.4.0.tar.gz
 
     # backup all Makefile's
     for i in $(find SuiteSparse/${lib} -name Makefile); do
@@ -81,14 +81,9 @@ build_suitesparse_pkg() {
 
 PREFIX=${PWD}/usr
 
-[[ -e SuiteSparse.tar.gz ]] || ./sync.bash
-if test $(find SuiteSparse.tar.gz -ctime 30); then
-    echo "Current version more than one month old, re-fetching"
-    rm -rf SuiteSparse SuiteSparse.tar.gz
-    ./sync.bash
-fi
+[[ -e SuiteSparse-5.4.0.tar.gz ]] || ./sync.bash
 
-[[ -d SuiteSparse ]] || tar xf SuiteSparse.tar.gz
+[[ -d SuiteSparse ]] || tar xf SuiteSparse-5.4.0.tar.gz
 
 if [[ $1 == ALL ]]; then
     # need to keep an order for dependencies
