@@ -1,4 +1,4 @@
-AC_INIT([btf], [1.2.0], [davis@cise.ufl.edu])
+AC_INIT([btf], [1.2.0], [davis@tamu.edu])
 
 AC_CONFIG_SRCDIR([Source/btf_order.c])
 AC_CONFIG_HEADERS([config.h])

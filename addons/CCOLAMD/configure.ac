@@ -1,4 +1,4 @@
-AC_INIT([ccolamd], [2.8.0], [davis@cise.ufl.edu])
+AC_INIT([ccolamd], [2.8.0], [davis@tamu.edu])
 
 AC_CONFIG_SRCDIR([Source/ccolamd_global.c])
 AC_CONFIG_HEADERS([config.h])

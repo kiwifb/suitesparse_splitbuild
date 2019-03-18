@@ -1,4 +1,4 @@
-AC_INIT([umfpack], [5.6.1], [davis@cise.ufl.edu])
+AC_INIT([umfpack], [5.6.1], [davis@tamu.edu])
 
 AC_CONFIG_SRCDIR([Source/umf_solve.c])
 AC_CONFIG_HEADERS([config.h])

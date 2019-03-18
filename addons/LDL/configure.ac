@@ -1,4 +1,4 @@
-AC_INIT([ldl], [2.1.1], [davis@cise.ufl.edu])
+AC_INIT([ldl], [2.1.1], [davis@tamu.edu])
 
 AC_CONFIG_SRCDIR([Source/ldl.c])
 AC_CONFIG_HEADERS([config.h])

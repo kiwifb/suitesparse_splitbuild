@@ -1,4 +1,4 @@
-AC_INIT([spqr], [1.3.1], [davis@cise.ufl.edu])
+AC_INIT([spqr], [1.3.1], [davis@tamu.edu])
 
 AC_CONFIG_SRCDIR([Source/spqr_parallel.cpp])
 AC_CONFIG_HEADERS([config.h])

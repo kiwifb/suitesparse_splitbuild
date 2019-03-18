@@ -1,4 +1,4 @@
-AC_INIT([suitesparseconfig], [4.0.2], [davis@cise.ufl.edu])
+AC_INIT([suitesparseconfig], [4.0.2], [davis@tamu.edu])
 
 AC_CONFIG_SRCDIR([SuiteSparse_config.c])
 AC_CONFIG_HEADERS([config.h])

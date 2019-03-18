@@ -1,4 +1,4 @@
-AC_INIT([amd], [2.3.1], [davis@cise.ufl.edu])
+AC_INIT([amd], [2.3.1], [davis@tamu.edu])
 
 AC_CONFIG_SRCDIR([Source/amd_global.c])
 AC_CONFIG_HEADERS([config.h])

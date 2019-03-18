@@ -1,4 +1,4 @@
-AC_INIT([camd], [2.3.1], [davis@cise.ufl.edu])
+AC_INIT([camd], [2.3.1], [davis@tamu.edu])
 
 AC_CONFIG_SRCDIR([Source/camd_global.c])
 AC_CONFIG_HEADERS([config.h])

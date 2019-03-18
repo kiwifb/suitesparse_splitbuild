@@ -1,4 +1,4 @@
-AC_INIT([cholmod], [2.1.2], [davis@cise.ufl.edu])
+AC_INIT([cholmod], [2.1.2], [davis@tamu.edu])
 
 AC_CONFIG_SRCDIR([Cored/cholmod_aat.c])
 AC_CONFIG_HEADERS([config.h Include/cholmod_config.h])

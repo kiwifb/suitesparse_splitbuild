@@ -1,4 +1,4 @@
-AC_INIT([cxsparse], [3.1.1], [davis@cise.ufl.edu])
+AC_INIT([cxsparse], [3.1.1], [davis@tamu.edu])
 
 AC_CONFIG_SRCDIR([Source/cs_dmperm.c])
 AC_CONFIG_HEADERS([config.h])
