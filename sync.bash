@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # sync with upstream
-wget -nc -c http://www.cise.ufl.edu/research/sparse/SuiteSparse/current/SuiteSparse.tar.gz
+wget -nc -c http://faculty.cse.tamu.edu/davis/SuiteSparse/SuiteSparse-5.4.0.tar.gz
 
 # sync m4 macros
 for macro in ax_blas ax_lapack; do

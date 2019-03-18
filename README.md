@@ -3,9 +3,7 @@ SuiteSparse with autotools
 
 This repository is a suite of scripts to re-package and build the
 SuiteSparse library. You may be more interested in the final tar
-balls. Download the latest tar balls at:
-
-http://dev.gentoo.org/~bicatali/distfiles/
+balls. This repository is forked from Sebastian Fabbro's original work.
 
 The repacking replaces the original well crafted but not portable
 Makefile with more standard autotools packaging and some other minor
@@ -32,8 +30,8 @@ The usual configure/make/make install goodies:
 
 Users can compile and link suitesparse libraries with a simple call to
 pkg-config, i.e.:
-   
-    pkg-config --cflags cholmod   
+
+    pkg-config --cflags cholmod
     pkg-config --libs cholmod
 
 All C source code is unmodified.
@@ -45,10 +43,10 @@ Resources
 ---------
 
 SuiteSparse web site:
-    http://www.cise.ufl.edu/research/sparse/SuiteSparse/
+    http://faculty.cse.tamu.edu/davis/suitesparse.html
 
 Download:
-    http://dev.gentoo.org/~bicatali/distfiles/
+    Unavailable right now.
 
 Git repository / bug reports / pull requests:
-    https://github.com/sfabbro/suitesparse
+    https://github.com/kiwifb/suitesparse
