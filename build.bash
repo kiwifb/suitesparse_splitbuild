@@ -61,7 +61,7 @@ build_suitesparse_pkg() {
     else
 	popd > /dev/null
 	echo "!! FAILED - See above"
-	return
+	exit 1
     fi
     popd > /dev/null
 
