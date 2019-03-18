@@ -16,6 +16,9 @@ AC_PROG_CC
 # Checks for typedefs, structures, and compiler characteristics
 AC_FUNC_ERROR_AT_LINE
 
+# Checks and automatically links with required system libraries
+AC_CHECK_LIB([m], [sqrt])
+
 # Checks for required SuiteSparse libraries
 AX_CHECK_PKG_LIB(
 	[suitesparseconfig],
