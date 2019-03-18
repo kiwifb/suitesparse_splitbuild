@@ -17,7 +17,7 @@ all-local: pdf-local
 doc_DATA += CAMD_UserGuide.pdf
 endif
 
-EXTRA_DIST = lesser.txt License CAMD_UserGuide.tex CAMD_UserGuide.bib
+EXTRA_DIST = lesser.txt License.txt CAMD_UserGuide.tex CAMD_UserGuide.bib
 
 CLEANFILES = *.aux *.bbl *.blg *.log *.toc *.pdf camd_h.tex
 MAINTAINERCLEANFILES = Makefile.in

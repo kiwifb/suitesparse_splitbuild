@@ -21,7 +21,7 @@ all-local: pdf-local
 doc_DATA += UserGuide.pdf QuickStart.pdf
 endif
 
-EXTRA_DIST = gpl.txt License UserGuide.sed1 UserGuide.sed2 UserGuide.stex QuickStart.tex UserGuide.bib
+EXTRA_DIST = gpl.txt License.txt UserGuide.sed1 UserGuide.sed2 UserGuide.stex QuickStart.tex UserGuide.bib
 
 CLEANFILES = *.aux *.bbl *.blg *.log *.toc *.pdf *.out UserGuide.tex
 MAINTAINERCLEANFILES = Makefile.in

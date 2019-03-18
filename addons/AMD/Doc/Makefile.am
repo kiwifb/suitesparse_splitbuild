@@ -17,7 +17,7 @@ all-local: pdf-local
 doc_DATA += AMD_UserGuide.pdf
 endif
 
-EXTRA_DIST = lesser.txt License AMD_UserGuide.tex AMD_UserGuide.bib
+EXTRA_DIST = lesser.txt License.txt AMD_UserGuide.tex AMD_UserGuide.bib
 
 CLEANFILES = *.aux *.bbl *.blg *.log *.toc *.pdf amd_h.tex
 MAINTAINERCLEANFILES = Makefile.in
