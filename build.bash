@@ -40,9 +40,10 @@ build_suitesparse_pkg() {
     if [ -e Doc/ChangeLog ]; then
 	version=$(awk '{print $5;exit};1' Doc/ChangeLog | sed 's/,/./g')
     else
-	version=$(grep VERSION ../README.txt | awk '{print $6}')
+	version=$(grep "SuiteSparse VERSION" ../README.txt | awk '{print $6}')
     fi
-    sed -i -e "/AC_INIT/s/[[:digit:]]\.[[:digit:]]\.[[:digit:]]/${version}/" configure.ac
+    echo "Doing ${lib} ${version}"
+    sed -i -e "/AC_INIT/ s|[[:digit:]]\.[[:digit:]]\.[[:digit:]]|${version}|" configure.ac
     # configure, build, test, and package
     autoreconf -vi && \
 	PKG_CONFIG_PATH="${PREFIX}/lib/pkgconfig:$PKG_CONFIG_PATH" \
