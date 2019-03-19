@@ -46,7 +46,7 @@ AX_CHECK_PKG_LIB(
 AX_CHECK_PKG_LIB(
 	[amd],
 	[amd.h],
-	[amd_malloc],,
+	[amd_info],,
 	[AC_MSG_ERROR([Could not find amd library])])
 
 AX_CHECK_PKG_LIB(
