@@ -1,4 +1,4 @@
-UserGuide.pdf: 
+CHOLMOD_UserGuide.pdf:
 	ln -s $(srcdir)/*.{awk,bib,tex} .
 	$(srcdir)/getmproto $(top_srcdir)/MATLAB/analyze.m > _analyze_m.tex
 	$(srcdir)/getmproto $(top_srcdir)/MATLAB/bisect.m > _bisect_m.tex
@@ -10,6 +10,7 @@ UserGuide.pdf:
 	$(srcdir)/getmproto $(top_srcdir)/MATLAB/graph_demo.m > _graph_demo_m.tex
 	$(srcdir)/getmproto $(top_srcdir)/MATLAB/lchol.m > _lchol_m.tex
 	$(srcdir)/getmproto $(top_srcdir)/MATLAB/ldlchol.m > _ldlchol_m.tex
+	$(srcdir)/getmproto $(top_srcdir)/MATLAB/ldlrowmod.m > _ldlrowmod_m.tex
 	$(srcdir)/getmproto $(top_srcdir)/MATLAB/ldl_normest.m > _ldl_normest_m.tex
 	$(srcdir)/getmproto $(top_srcdir)/MATLAB/ldlsolve.m > _ldlsolve_m.tex
 	$(srcdir)/getmproto $(top_srcdir)/MATLAB/ldlsplit.m > _ldlsplit_m.tex
@@ -168,21 +169,21 @@ UserGuide.pdf:
 	$(srcdir)/getproto '/long cholmod_bisect/, /\*\) ;/' $(top_srcdir)/Include/cholmod_partition.h > _bisect.tex
 	$(srcdir)/getproto '/long cholmod_metis_bisector/, /\*\) ;/' $(top_srcdir)/Include/cholmod_partition.h > _metis_bisector.tex
 	$(srcdir)/getproto '/long cholmod_collapse_septree/, /\*\) ;/' $(top_srcdir)/Include/cholmod_partition.h > _collapse_septree.tex
-	$(PDFLATEX) UserGuide
-	$(BIBTEX) UserGuide
-	$(PDFLATEX) UserGuide
-	$(PDFLATEX) UserGuide
+	$(PDFLATEX) CHOLMOD_UserGuide
+	$(BIBTEX) CHOLMOD_UserGuide
+	$(PDFLATEX) CHOLMOD_UserGuide
+	$(PDFLATEX) CHOLMOD_UserGuide
 
 doc_DATA = ChangeLog
 
 if BUILD_DOCS
-pdf-local: UserGuide.pdf
+pdf-local: CHOLMOD_UserGuide.pdf
 all-local: pdf-local
-doc_DATA += UserGuide.pdf
+doc_DATA += CHOLMOD_UserGuide.pdf
 endif
 
-EXTRA_DIST = UserGuide.tex UserGuide.bib getproto rule.awk header.tex \
-	footer.tex getmproto mfooter.tex mheader.tex mfile.awk
+EXTRA_DIST = CHOLMOD_UserGuide.tex UserGuide.bib getproto rule.awk header.tex \
+	footer.tex getmproto mfooter.tex mheader.tex mfile.awk License.txt
 
 CLEANFILES = *.aux *.bbl *.blg *.log *.toc *.pdf _*
 MAINTAINERCLEANFILES = Makefile.in

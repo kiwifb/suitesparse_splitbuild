@@ -63,12 +63,16 @@ test x$enable_print = xyes || AC_DEFINE([NPRINT], [1], [Do not print anything])
 # GPU_BLAS_PATH=/usr/local/cuda
 # GPU_CONFIG=-DGPU_BLAS -I$(GPU_BLAS_PATH)/include
 PC_LIBS=
-AC_ARG_WITH(cuda, 
+AC_ARG_WITH(cuda,
     [AC_HELP_STRING([--with-cuda],
 		    [Build with CUDA BLAS acceleration])],
      [with_cuda=$withval],
      [with_cuda=no])
 if test x$with_cuda != xno; then
+    AC_PATH_PROG(
+		NVCC,
+		nvcc,,)
+    AC_SUBST([NVCC])
     AX_CHECK_PKG_LIB(
 		[cublas],
 		[cublas_v2.h],
@@ -77,6 +81,7 @@ if test x$with_cuda != xno; then
     test x$CUBLAS_PC = x && PC_LIBS="$PC_LIBS $CUBLAS_LIBS"
     AC_DEFINE([GPU_BLAS], [1], [Built with CUDA BLAS acceleration])
 fi
+AM_CONDITIONAL([WITH_CUDA], [test x$with_cuda = xyes])
 
 #
 # Optional Modules
@@ -224,6 +229,7 @@ AC_CONFIG_FILES([Check/Makefile
 		 Cored/Makefile
 		 Demo/Makefile		 
                  Doc/Makefile
+                 GPU/Makefile
                  Include/Makefile
 		 MatrixOps/Makefile
 		 Modify/Makefile

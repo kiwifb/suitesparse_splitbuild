@@ -16,4 +16,4 @@ libmatrixops_la_SOURCES = \
 libmatrixopsl_la_SOURCES = $(libmatrixops_la_SOURCES)
 libmatrixopsl_la_CPPFLAGS = $(AM_CPPFLAGS) -DDLONG
 
-EXTRA_DIST = gpl.txt License.txt
+EXTRA_DIST = gpl.txt

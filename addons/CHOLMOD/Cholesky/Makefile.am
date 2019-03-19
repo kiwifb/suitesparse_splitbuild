@@ -27,4 +27,4 @@ libcholeskyl_la_CPPFLAGS = $(AM_CPPFLAGS) -DDLONG
 libcholeskyl_la_SOURCES = $(libcholesky_la_SOURCES)
 libcholeskyl_la_LIBADD = $(libcholesky_la_LIBADD)
 
-EXTRA_DIST = lesser.txt License.txt
+EXTRA_DIST = lesser.txt

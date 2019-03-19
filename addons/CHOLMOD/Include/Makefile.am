@@ -36,6 +36,7 @@ include_HEADERS = \
 	cholmod_blas.h \
 	cholmod_camd.h \
 	cholmod_core.h \
-	cholmod_io64.h
+	cholmod_io64.h \
+	cholmod_function.h
 
-EXTRA_DIST = README.txt License.txt
+EXTRA_DIST = README.txt

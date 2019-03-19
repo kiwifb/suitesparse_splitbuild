@@ -12,4 +12,4 @@ libmodify_la_SOURCES = \
 libmodifyl_la_SOURCES = $(libmodify_la_SOURCES)
 libmodifyl_la_CPPFLAGS = $(AM_CPPFLAGS) -DDLONG
 
-EXTRA_DIST = License.txt gpl.txt
+EXTRA_DIST = gpl.txt

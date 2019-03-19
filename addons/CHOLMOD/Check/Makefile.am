@@ -9,4 +9,4 @@ libcheck_la_LIBADD = @SUITESPARSECONFIG_LIBS@
 libcheckl_la_CPPFLAGS = $(AM_CPPFLAGS) -DDLONG
 libcheckl_la_SOURCES = $(libcheck_la_SOURCES)
 libcheckl_la_LIBADD = @SUITESPARSECONFIG_LIBS@
-EXTRA_DIST = lesser.txt License.txt
+EXTRA_DIST = lesser.txt

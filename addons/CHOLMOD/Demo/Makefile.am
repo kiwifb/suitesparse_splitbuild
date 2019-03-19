@@ -28,4 +28,4 @@ endif
 endif
 
 CLEANFILES = timelog.m
-EXTRA_DIST = Matrix gpl.txt License.txt
+EXTRA_DIST = Matrix gpl.txt

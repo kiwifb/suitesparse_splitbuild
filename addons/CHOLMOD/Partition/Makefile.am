@@ -14,4 +14,4 @@ libpartitionl_la_CPPFLAGS = $(AM_CPPFLAGS) -DDLONG
 libpartitionl_la_SOURCES = $(libpartition_la_SOURCES)
 libpartitionl_la_LIBADD = $(libpartition_la_LIBADD)
 
-EXTRA_DIST = lesser.txt License.txt
+EXTRA_DIST = lesser.txt

@@ -27,4 +27,4 @@ libcore_la_SOURCES = \
 libcorel_la_SOURCES = $(libcore_la_SOURCES)
 libcorel_la_CPPFLAGS = $(AM_CPPFLAGS) -DDLONG
 
-EXTRA_DIST = lesser.txt License.txt
+EXTRA_DIST = lesser.txt
