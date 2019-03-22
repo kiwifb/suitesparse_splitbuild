@@ -1,5 +1,5 @@
 CHOLMOD_UserGuide.pdf:
-	ln -s $(srcdir)/*.{awk,bib,tex} .
+	-ln -s $(srcdir)/*.{awk,bib,tex} .
 	$(srcdir)/getmproto $(top_srcdir)/MATLAB/analyze.m > _analyze_m.tex
 	$(srcdir)/getmproto $(top_srcdir)/MATLAB/bisect.m > _bisect_m.tex
 	$(srcdir)/getmproto $(top_srcdir)/MATLAB/chol2.m > _chol2_m.tex

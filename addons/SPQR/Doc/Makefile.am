@@ -1,6 +1,6 @@
 
 spqr_user_guide.pdf:
-	ln -s $(srcdir)/*.{tex,bib} .
+	-ln -s $(srcdir)/*.{tex,bib} .
 	$(PDFLATEX) spqr_user_guide
 	$(BIBTEX) spqr_user_guide
 	$(PDFLATEX) spqr_user_guide

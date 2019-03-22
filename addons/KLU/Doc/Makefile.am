@@ -9,7 +9,7 @@ KLU_UserGuide.pdf:
 	echo '\begin{verbatim}' > klu_simple_c.tex
 	expand -8 $(top_srcdir)/Demo/klu_simple.c >> klu_simple_c.tex
 	echo '\end{verbatim}' >> klu_simple_c.tex
-	ln -s $(srcdir)/*.{tex,bib} .
+	-ln -s $(srcdir)/*.{tex,bib} .
 	$(PDFLATEX) KLU_UserGuide
 	$(BIBTEX)  KLU_UserGuide
 	$(PDFLATEX) KLU_UserGuide

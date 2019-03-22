@@ -3,7 +3,7 @@ AMD_UserGuide.pdf:
 	echo '\begin{verbatim}' > amd_h.tex
 	expand -8 $(top_srcdir)/Include/amd.h >> amd_h.tex
 	echo '\end{verbatim}' >> amd_h.tex
-	ln -s $(srcdir)/*.{tex,bib} .
+	-ln -s $(srcdir)/*.{tex,bib} .
 	$(PDFLATEX) AMD_UserGuide
 	$(BIBTEX)  AMD_UserGuide
 	$(PDFLATEX) AMD_UserGuide
