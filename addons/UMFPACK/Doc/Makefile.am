@@ -1,6 +1,6 @@
 
 UMFPACK_UserGuide.pdf:
-	$(LN_S) $(srcdir)/UserGuide.bib .
+	-$(LN_S) $(srcdir)/UserGuide.bib .
 	$(SED) -f $(srcdir)/UserGuide.sed1 < $(srcdir)/UMFPACK_UserGuide.stex | \
 	$(SED) -f $(srcdir)/UserGuide.sed2 | $(EXPAND) -8 > UMFPACK_UserGuide.tex
 	$(PDFLATEX) UMFPACK_UserGuide
@@ -9,7 +9,7 @@ UMFPACK_UserGuide.pdf:
 	$(PDFLATEX) UMFPACK_UserGuide
 
 UMFPACK_QuickStart.pdf:
-	$(LN_S) $(srcdir)/UMFPACK_QuickStart.tex .
+	-$(LN_S) $(srcdir)/UMFPACK_QuickStart.tex .
 	$(PDFLATEX) UMFPACK_QuickStart
 	$(PDFLATEX) UMFPACK_QuickStart
 
