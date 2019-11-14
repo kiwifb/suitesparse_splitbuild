@@ -8,32 +8,38 @@ $(ls -1d addons/* | xargs -n1 basename | grep -v '^\(config\|m4\)' | awk '{print
     exit
 fi
 
+VERSION="5.6.0"
 
 build_suitesparse_pkg() {
     local lib=$1 i
     shift
     # remove old
+    if [[ -d SuiteSparse-${VERSION} ]];  then
+	chmod -R 755 SuiteSparse-${VERSION}
+	rm -rf SuiteSparse-${VERSION}
+    fi
+    # remove older unversionned version if present
     if [[ -d SuiteSparse ]];  then
 	chmod -R 755 SuiteSparse
 	rm -rf SuiteSparse
     fi
     rm -rf ${lib}_build
-    tar xf SuiteSparse-5.4.0.tar.gz
+    tar xf SuiteSparse-${VERSION}.tar.gz
 
     # backup all Makefile's
-    for i in $(find SuiteSparse/${lib} -name Makefile); do
+    for i in $(find SuiteSparse-${VERSION}/${lib} -name Makefile); do
 	[ -e ${i}.orig ] || mv ${i} ${i}.orig
     done
 
     # copy common files
-    cp -r addons/{config,m4} SuiteSparse/${lib}
+    cp -r addons/{config,m4} SuiteSparse-${VERSION}/${lib}
 
     # copy specific files
     for i in $(find addons/${lib} -type f); do
-	cp ${i} SuiteSparse/$(dirname ${i/addons\/})
+	cp ${i} SuiteSparse-${VERSION}/$(dirname ${i/addons\/})
     done
 
-    pushd SuiteSparse/${lib} > /dev/null
+    pushd SuiteSparse-${VERSION}/${lib} > /dev/null
     # apply hook
     [[ -x post-copy-hook.bash ]] && ./post-copy-hook.bash
     # try to guess version
@@ -66,7 +72,7 @@ build_suitesparse_pkg() {
     popd > /dev/null
 
     # now install and save generated tar ball
-    local tb=$(find SuiteSparse/${lib} -name \*-${version}.tar.bz2)
+    local tb=$(find SuiteSparse-${VERSION}/${lib} -name \*-${version}.tar.bz2)
     local src=$(basename ${tb} .tar.bz2)
     tar xf ${tb} && \
 	mkdir ${lib}_build && \
@@ -82,9 +88,9 @@ build_suitesparse_pkg() {
 
 PREFIX=${PWD}/usr
 
-[[ -e SuiteSparse-5.4.0.tar.gz ]] || ./sync.bash
+[[ -e "SuiteSparse-${VERSION}.tar.gz" ]] || ./sync.bash ${VERSION}
 
-[[ -d SuiteSparse ]] || tar xf SuiteSparse-5.4.0.tar.gz
+[[ -d "SuiteSparse-${VERSION}" ]] || tar xf SuiteSparse-${VERSION}.tar.gz
 
 if [[ $1 == ALL ]]; then
     # need to keep an order for dependencies
