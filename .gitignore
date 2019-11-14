@@ -1,5 +1,6 @@
 SuiteSparse/*
 SuiteSparse-*/*
+SuiteSparse-*/
 SuiteSparse*.tar*
 distfiles/
 usr/
