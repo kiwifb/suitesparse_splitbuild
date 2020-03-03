@@ -1,4 +1,5 @@
 AM_CPPFLAGS = -I$(top_srcdir)/Include @SUITESPARSECONFIG_CFLAGS@
+AM_LDFLAGS = -version-info @LT_CURRENT@:@LT_REVISION@:@LT_AGE@
 
 lib_LTLIBRARIES = librbio.la
 librbio_la_SOURCES = RBio.c $(top_srcdir)/Include/RBio.h

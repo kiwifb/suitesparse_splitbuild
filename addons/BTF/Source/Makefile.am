@@ -1,4 +1,5 @@
 AM_CPPFLAGS = -I$(top_srcdir)/Include @SUITESPARSECONFIG_CFLAGS@
+AM_LDFLAGS = -version-info @LT_CURRENT@:@LT_REVISION@:@LT_AGE@
 
 BTFSRC = \
 	$(top_srcdir)/Include/btf_internal.h \

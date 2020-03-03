@@ -11,6 +11,13 @@ AM_INIT_AUTOMAKE([no-dist-gzip dist-bzip2 foreign])
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES(yes)])
 
 LT_INIT
+LT_CURRENT=@SO_NAME@
+LT_REVISION=0
+LT_AGE=0
+AC_SUBST(LT_CURRENT)
+AC_SUBST(LT_REVISION)
+AC_SUBST(LT_AGE)
+
 AC_PROG_CC
 
 # Checks for typedefs, structures, and compiler characteristics

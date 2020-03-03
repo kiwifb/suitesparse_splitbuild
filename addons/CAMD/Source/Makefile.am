@@ -1,4 +1,5 @@
 AM_CPPFLAGS = -I$(top_srcdir)/Include @SUITESPARSECONFIG_CFLAGS@
+AM_LDFLAGS = -version-info @LT_CURRENT@:@LT_REVISION@:@LT_AGE@
 
 CAMDSRC = \
 	$(top_srcdir)/Include/camd_internal.h \

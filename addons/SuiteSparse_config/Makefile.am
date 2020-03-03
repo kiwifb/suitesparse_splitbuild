@@ -1,5 +1,6 @@
 
 ACLOCAL_AMFLAGS = -I m4
+AM_LDFLAGS = -version-info @LT_CURRENT@:@LT_REVISION@:@LT_AGE@
 
 include config/common.am
 

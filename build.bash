@@ -26,6 +26,20 @@ build_suitesparse_pkg() {
     rm -rf ${lib}_build
     tar xf SuiteSparse-${VERSION}.tar.gz
 
+    # try to guess version
+    # Also collect so_version as defined by suitesparse
+    pushd SuiteSparse-${VERSION}/${lib} > /dev/null
+    if [ -e Lib/Makefile ]; then
+	version=$(awk '{ if ($1 == "VERSION" ) print $3}' Lib/Makefile )
+	so_version=$(awk '{ if ($1 == "SO_VERSION" ) print $3}' Lib/Makefile )
+    else
+	# suitesparse_config doesn't have a Lib folder
+	version=$(awk '{ if ($1 == "VERSION" ) print $3}' Makefile )
+	so_version=$(awk '{ if ($1 == "SO_VERSION" ) print $3}' Makefile )
+    fi
+    popd > /dev/null
+    echo "Doing ${lib} ${version} with so_version ${so_version}"
+
     # backup all Makefile's
     for i in $(find SuiteSparse-${VERSION}/${lib} -name Makefile); do
 	[ -e ${i}.orig ] || mv ${i} ${i}.orig
@@ -42,14 +56,9 @@ build_suitesparse_pkg() {
     pushd SuiteSparse-${VERSION}/${lib} > /dev/null
     # apply hook
     [[ -x post-copy-hook.bash ]] && ./post-copy-hook.bash
-    # try to guess version
-    if [ -e Doc/ChangeLog ]; then
-	version=$(awk '{print $5;exit};1' Doc/ChangeLog | sed 's/,/./g')
-    else
-	version=$(grep "SuiteSparse VERSION" ../README.txt | awk '{print $6}')
-    fi
-    echo "Doing ${lib} ${version}"
-    sed -i -e "/AC_INIT/ s|[[:digit:]]\.[[:digit:]]\.[[:digit:]]|${version}|" configure.ac
+    sed -e "/AC_INIT/ s|[[:digit:]]\.[[:digit:]]\.[[:digit:]]|${version}|" \
+        -e "s:@SO_NAME@:${so_version}:" \
+        -i configure.ac
     # configure, build, test, and package
     autoreconf -vi && \
 	PKG_CONFIG_PATH="${PREFIX}/lib/pkgconfig:$PKG_CONFIG_PATH" \

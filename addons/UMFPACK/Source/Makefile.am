@@ -1,5 +1,6 @@
 AM_CPPFLAGS = -I$(top_srcdir)/Include \
 	@SUITESPARSECONFIG_CFLAGS@ @AMD_CFLAGS@ @CHOLMOD_CFLAGS@
+AM_LDFLAGS = -version-info @LT_CURRENT@:@LT_REVISION@:@LT_AGE@
 
 noinst_HEADERS = \
 	cholmod_blas.h \

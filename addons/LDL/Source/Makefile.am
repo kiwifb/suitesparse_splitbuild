@@ -1,4 +1,5 @@
 AM_CPPFLAGS = -I$(top_srcdir)/Include @SUITESPARSECONFIG_CFLAGS@
+AM_LDFLAGS = -version-info @LT_CURRENT@:@LT_REVISION@:@LT_AGE@
 
 LDLSRC = ldl.c $(top_srcdir)/Include/ldl.h
 
