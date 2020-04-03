@@ -8,7 +8,7 @@ $(ls -1d addons/* | xargs -n1 basename | grep -v '^\(config\|m4\)' | awk '{print
     exit
 fi
 
-VERSION="5.6.0"
+VERSION="5.7.1"
 
 build_suitesparse_pkg() {
     local lib=$1 i
