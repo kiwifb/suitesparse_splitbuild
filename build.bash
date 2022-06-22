@@ -8,7 +8,7 @@ $(ls -1d addons/* | xargs -n1 basename | grep -v '^\(config\|m4\)' | awk '{print
     exit
 fi
 
-VERSION="5.7.1"
+VERSION="5.12.0"
 
 build_suitesparse_pkg() {
     local lib=$1 i
@@ -36,6 +36,15 @@ build_suitesparse_pkg() {
 	# suitesparse_config doesn't have a Lib folder
 	version=$(awk '{ if ($1 == "VERSION" ) print $3}' Makefile )
 	so_version=$(awk '{ if ($1 == "SO_VERSION" ) print $3}' Makefile )
+    fi
+    # if required version number are not found previously try another way of guessing
+    # via Changelog
+    if [ -z $version ]; then
+        version=$(head -2 Doc/ChangeLog | awk '{ if ($4 == "version" ) print $5}')
+    fi
+    # if so_version is not found set it to 0
+    if [ -z $so_version ]; then
+        so_version=0
     fi
     popd > /dev/null
     echo "Doing ${lib} ${version} with so_version ${so_version}"
@@ -108,6 +117,7 @@ if [[ $1 == ALL ]]; then
     build_suitesparse_pkg COLAMD
     build_suitesparse_pkg CAMD
     build_suitesparse_pkg CCOLAMD
+    build_suitesparse_pkg CSparse
     build_suitesparse_pkg CXSparse
     build_suitesparse_pkg RBio
     build_suitesparse_pkg LDL
